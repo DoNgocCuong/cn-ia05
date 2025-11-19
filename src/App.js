@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import DetailPage from "./pages/DetailPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-root">
+      <header className="topbar">
+        <div className="container topbar-inner">
+          <Link to="/photos" className="brand">Picsum Explorer</Link>
+        </div>
       </header>
+
+      <main className="container main">
+        <Routes>
+          {/* /photos is primary listing route */}
+          <Route path="/" element={<Navigate to="/photos" replace />} />
+          <Route path="/photos" element={<Homepage />} />
+          <Route path="/photos/:id" element={<DetailPage />} />
+          <Route path="*" element={<div style={{ padding: 40 }}>Page not found. <Link to="/photos">Back</Link></div>} />
+        </Routes>
+      </main>
+
+      <footer className="footer">
+        <div className="container">Built with React (CRA) • Lorem Picsum API</div>
+      </footer>
     </div>
   );
 }
-
-export default App;
