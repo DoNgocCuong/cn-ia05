@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route, Navigate, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import Homepage from "./pages/Homepage";
 import DetailPage from "./pages/DetailPage";
 
