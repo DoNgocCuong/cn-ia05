@@ -2,7 +2,7 @@
   "name": "picsum-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://DoNgocCuong.github.io/ia05-web-bt",
+  "homepage": "https://DoNgocCuong.github.io/bttuan-ia05",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
